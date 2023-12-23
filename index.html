@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ accordion</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: "WorkSans";
+        src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf")
+          format("truetype");
+      }
+
+      body {
+        font-family: "WorkSans";
+        background-image: url("assets/images/background-pattern-desktop.svg");
+        background-size: calc(100vh-80vh);
+        background-repeat: repeat-x;
+        object-fit: fill;
+        height: 97vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .accordion {
+        width: 40vw;
+
+        padding: 4vw;
+        border-radius: 15px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14);
+        background-color: #fff;
+      }
+
+      .title_container {
+        display: flex;
+        align-items: center;
+        justify-content: baseline;
+        gap: 1vw;
+        padding: 0 0 1vw 0;
+      }
+
+      .title_header {
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      .header_title:hover {
+        color: #ad28eb;
+        cursor: pointer;
+      }
+      .accordion-header {
+        font-size: 16px;
+        padding: 1vw 0;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .accordion-body {
+        font-size: 14px;
+        opacity: 0;
+        height: 0;
+      }
+
+      .accordion-body.active {
+        opacity: 1;
+        height: auto;
+      }
+
+      hr {
+        border: 0;
+        height: 1px;
+        background-image: -webkit-linear-gradient(
+          left,
+          #f5f5f5,
+          #f5f5f5,
+          #f5f5f5
+        );
+      }
+
+      @media (max-width: 767px) {
+        .accordion {
+          width: 85vw;
+
+          padding: 2vw;
+          border-radius: 15px;
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14);
+          background-color: #fff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="accordion" id="accordionExample">
+      <div class="title_container">
+        <img src="./assets/images/icon-star.svg" alt="faq" />
+        <div class="title_header">FAQs</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="header_title">Accordion Item #1</div>
+          <div class="header_icon">
+            <img src="./assets/images/icon-plus.svg" width="25px" alt="faq" />
+          </div>
+        </div>
+
+        <div class="accordion-body">
+          This is the first item's accordion body. This is the first item's
+          accordion body. This is the first item's accordion body.
+        </div>
+      </div>
+      <hr />
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="header_title">Accordion Item #2</div>
+          <div class="header_icon">
+            <img src="./assets/images/icon-plus.svg" width="25px" alt="faq" />
+          </div>
+        </div>
+
+        <div class="accordion-body">
+          This is the first item's accordion body. This is the first item's
+          accordion body. This is the first item's accordion body.
+        </div>
+      </div>
+      <hr />
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="header_title">Accordion Item #3</div>
+          <div class="header_icon">
+            <img src="./assets/images/icon-plus.svg" width="25px" alt="faq" />
+          </div>
+        </div>
+
+        <div class="accordion-body">
+          This is the first item's accordion body. This is the first item's
+          accordion body. This is the first item's accordion body.
+        </div>
+      </div>
+      <hr />
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="header_title">Accordion Item #4</div>
+          <div class="header_icon">
+            <img src="./assets/images/icon-plus.svg" width="25px" alt="faq" />
+          </div>
+        </div>
+
+        <div class="accordion-body">
+          This is the first item's accordion body. This is the first item's
+          accordion body. This is the first item's accordion body.
+        </div>
+      </div>
+    </div>
+    <script async>
+      let items = document.querySelectorAll(".accordion-item");
+      items.forEach((item) => {
+        item.addEventListener("click", () => {
+          let Childrens = item.children;
+          if (Childrens[1].classList.contains("active")) {
+            Childrens[0].querySelector(
+              ".header_icon"
+            ).innerHTML = `<img src="./assets/images/icon-plus.svg" width="25px" alt="faq">`;
+          } else {
+            Childrens[0].querySelector(
+              ".header_icon"
+            ).innerHTML = `<img src="./assets/images/icon-minus.svg" width="25px" alt="faq">`;
+          }
+          Childrens[1].classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
