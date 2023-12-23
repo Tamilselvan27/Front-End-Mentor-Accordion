@@ -3,18 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-
     <title>Frontend Mentor | FAQ accordion</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       @font-face {
         font-family: "WorkSans";
@@ -36,11 +31,10 @@
 
       .accordion {
         width: 40vw;
-
         padding: 4vw;
         border-radius: 15px;
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14);
-        background-color: #fff;
+        background-color: hsl(0, 0%, 100%);
       }
 
       .title_container {
@@ -57,7 +51,7 @@
       }
 
       .header_title:hover {
-        color: #ad28eb;
+        color: hsl(292, 16%, 49%);
         cursor: pointer;
       }
       .accordion-header {
@@ -90,14 +84,9 @@
         );
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 375px) {
         .accordion {
           width: 85vw;
-
-          padding: 2vw;
-          border-radius: 15px;
-          box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14);
-          background-color: #fff;
         }
       }
     </style>
@@ -164,7 +153,7 @@
         </div>
       </div>
     </div>
-    <script async>
+    <script>
       let items = document.querySelectorAll(".accordion-item");
       items.forEach((item) => {
         item.addEventListener("click", () => {
